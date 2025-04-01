@@ -118,13 +118,17 @@ CREATE TABLE operadoras_plano_saude(
 );
 
 
+TRUNCATE TABLE operadoras_plano_saude;
+
 LOAD DATA LOCAL INFILE 'C:\\Users\\bryan\\Documents\\IntuitiveCareNivelamento\\Relatorio_cadop.csv'
 INTO TABLE operadoras_plano_saude
+CHARACTER SET utf8mb4  -- Teste com UTF-8
 FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
+OPTIONALLY ENCLOSED BY '"'
+ESCAPED BY '\\'  -- Adiciona tratamento de escape
+LINES TERMINATED BY '\n'  -- Teste com apenas \n
 IGNORE 1 LINES;
 
 
-
+SHOW DATABASES;
 
